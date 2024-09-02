@@ -24,15 +24,33 @@ repositories {
 }
 
 dependencies {
+	// Spring Boot validation 및 web starter
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// Spring Kafka 관련 의존성
 	implementation 'org.springframework.kafka:spring-kafka'
+
+	// Lombok 라이브러리 (컴파일 타임 및 어노테이션 처리기)
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+
+	// Spring Boot 기본 테스트 의존성
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// Spring Kafka 테스트 의존성
 	testImplementation 'org.springframework.kafka:spring-kafka-test'
+
+	// JUnit 플랫폼 런처 (테스트 실행 시 필요)
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	// 추가된 의존성
+	// Jackson 라이브러리 (JSON 처리용)
+	implementation 'com.fasterxml.jackson.core:jackson-databind'
+	implementation 'com.fasterxml.jackson.core:jackson-core'
+	implementation 'com.fasterxml.jackson.core:jackson-annotations'
 }
+
 
 tasks.named('test') {
 	useJUnitPlatform()
